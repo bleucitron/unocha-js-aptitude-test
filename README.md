@@ -109,8 +109,13 @@ Update the schema, and create new CRUD endpoints to create and manage teams.
 
 ## Frontend Tasks
 
-The task here is to implement the mimimal UI to manage
+The task here is to implement a mimimal UI to manage
 (create / read / edit / delete) and list employees.
+
+The folder `frontend/` has a boilerplate TypeScript project created using
+`create-react-app` which you can use as your base.
+When working on this task,
+you can assume that the URL of the API will be `http://localhost:8080`
 
 (If you have enough time, and have completed all other tasks, you are welcome to
 extend the UI to create and manage the teams endpoints too)
