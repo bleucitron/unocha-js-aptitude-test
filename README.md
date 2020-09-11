@@ -7,6 +7,32 @@ Requirements:
 * Node.js v10
 * NPM
 
+Start the backend with:
+
+```
+cd backend
+npm install
+npm start
+```
+
+Test the backend with:
+
+```
+cd backend
+npm install
+npm test
+```
+
+*(If you want to run tests in watch mode, you can run `npm run test -- --watchAll`)*
+
+Start the frontend with:
+
+```
+cd frontend
+npm install
+npm start
+```
+
 ## Overview
 
 This is a general test for proficiency in Node and React,
@@ -50,7 +76,7 @@ and improve test coverage.
 The API Uses the following:
 
 * Node.js v10
-* Express for routing and request handling
+* Restify for routing and request handling
 * Sequelize as the ORM
 * SQLite3 as the DB
 * Jest for running unit tests
