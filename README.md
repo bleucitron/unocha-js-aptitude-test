@@ -36,8 +36,7 @@ npm start
 ## Overview
 
 This is a general test for proficiency in Node and React,
-to help us determine if your application is suitable within our team
-as a Backend, Frontend or Full Stack developer.
+to help us determine if your application is suitable for our team.
 
 Please read the following instructions carefully.
 
@@ -46,12 +45,9 @@ of the 2 you feel your skillsets are stronger in,
 with regards to developing Backend Node and/or Front end React.
 
 This test is split into 2: a backend and frontend task.
-Please do the task which you feel your skillset is strongest in.
-If you think you are able to do both tasks,
-start on the one which you are strongest in first,
+Please do the task which you feel your skillset is strongest in first
 and complete as much as you can of the other in the available time.
-The backend and frontend tasks will be scored separately,
-rather than added up as a total.
+
 
 The tasks within this test are designed to be completed within 3 hours total:
 2 hours for the backend and 1 hour for the frontend.
