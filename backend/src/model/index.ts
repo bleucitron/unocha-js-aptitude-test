@@ -1,6 +1,7 @@
 import { Sequelize } from 'sequelize';
 
 import employee from './employee';
+import team from './team';
 
 /**
  * Once we have initialized the individual models in `init()`,
@@ -10,29 +11,25 @@ let _models: null | ReturnType<typeof initModels> = null;
 
 export const initModels = (sequelize: Sequelize) => {
   const models = {
-    employee: employee(sequelize)
-  }
+    employee: employee(sequelize),
+    team: team(sequelize),
+  };
 
   return models;
-}
+};
 
 export const init = async (path: string) => {
-  const sequelize = new Sequelize(
-    'unochadb',
-    '',
-    '',
-    {
-      dialect: 'sqlite',
-      storage: path,
-    }
-  );
+  const sequelize = new Sequelize('unochadb', '', '', {
+    dialect: 'sqlite',
+    storage: path,
+  });
 
   _models = initModels(sequelize);
 
   await sequelize.authenticate();
   await sequelize.sync();
   return sequelize;
-}
+};
 
 export const models = () => {
   /* istanbul ignore if */
@@ -40,4 +37,4 @@ export const models = () => {
     throw new Error('Models not initialized');
   }
   return _models;
-}
+};

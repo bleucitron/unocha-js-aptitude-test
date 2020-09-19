@@ -1,14 +1,20 @@
-import { Sequelize, DataTypes } from 'sequelize';
+import { Sequelize, DataTypes, Model, BuildOptions } from 'sequelize';
 
-import type { DBitem } from '../interfaces';
-
-export interface Employee extends DBitem {
+export interface Employee {
   firstName: string;
   lastName: string;
 }
 
+interface EmployeeModel extends Model, Employee {
+  readonly id: number;
+}
+
+type EmployeeStatic = typeof Model & {
+  new (values?: object, options?: BuildOptions): EmployeeModel;
+};
+
 export default (sequelize: Sequelize) => {
-  return sequelize.define('employee', {
+  return <EmployeeStatic>sequelize.define('employee', {
     id: {
       type: DataTypes.INTEGER,
       autoIncrement: true,
