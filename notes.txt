@@ -1,6 +1,10 @@
 My skillsets in order of experience and level (Strongest first):
-1:
-2:
+1: Front-end
+2: Back-end
 
 Any Other Notes:
+
+I could not finish the front-end part in time because i wasted a good amount of time on a non React bug.
+I still haven't figured it out.
+So i'm leaving this as it is.
 

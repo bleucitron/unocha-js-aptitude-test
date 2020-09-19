@@ -1,12 +1,11 @@
-import { ValidationError } from 'sequelize'
+import { ValidationError } from 'sequelize';
 import { Server } from 'restify';
 import { models } from '../model';
 
 export const addRoutes = (server: Server) => {
-
   server.get('/employees', async (req, res) => {
     try {
-      res.send(await models().employee.findAll())
+      res.send(await models().employee.findAll());
     } catch (err) {
       res.send(500);
     }
@@ -26,14 +25,14 @@ export const addRoutes = (server: Server) => {
   });
 
   server.post('/employees', async (req, res) => {
-
-    if (!req.body?.employee) {
+    const body = JSON.parse(req.body);
+    if (!body?.employee) {
       res.send(400, 'Missing employee information');
       return;
     }
 
     try {
-      const employee = await models().employee.create(req.body.employee);
+      const employee = await models().employee.create(body.employee);
       res.send(employee);
     } catch (err) {
       if (err instanceof ValidationError) {
@@ -46,7 +45,6 @@ export const addRoutes = (server: Server) => {
   });
 
   server.put('/employees/:id', async (req, res) => {
-
     if (!req.body?.employee) {
       res.send(400, 'Missing employee information');
       return;
@@ -70,7 +68,6 @@ export const addRoutes = (server: Server) => {
   });
 
   server.del('/employees/:id', async (req, res) => {
-
     if (!req.body?.employee) {
       res.send(400, 'Missing employee information');
       return;
@@ -93,5 +90,4 @@ export const addRoutes = (server: Server) => {
       }
     }
   });
-
-}
+};
